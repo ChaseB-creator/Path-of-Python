@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pinch of Python</title>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header id="title"></header>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-link">Pinch of Python</a>
+    <a href="account.html" class="nav-link">Account</a>
+    <a href="current-progress.html" class="nav-link">Current Progress</a>
+    <a href="lesson-recaps.html" class="nav-link">Lesson Recaps</a>
+    <a href="about.html" class="nav-link">About</a>
+</nav>
+
+<div class="tree">
+
+    <div class="row">
+        <div class="lesson">Intro</div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="row">
+        <div class="lesson">Variables</div>
+        <div class="lesson">Output</div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="row">
+        <div class="lesson">Conditionals</div>
+        <div class="lesson">Loops</div>
+        <div class="lesson">Functions</div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="row">
+        <div class="lesson">Lists</div>
+        <div class="lesson">Dictionaries</div>
+    </div>
+
+</div>
+
+<footer>
+Python Learning Path — More lessons coming
+</footer>
+
+<!-- Lesson modal (hidden by default) -->
+<div id="lesson-modal">
+    <div class="lesson-card">
+        <button id="close-btn">&times;</button>
+        <h2 id="lesson-title"></h2>
+        <div id="lesson-page-text"></div>
+        <div class="lesson-nav">
+            <button id="prev-btn" class="nav-btn">&larr;</button>
+            <button id="next-btn" class="nav-btn">&rarr;</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
