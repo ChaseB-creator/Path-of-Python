@@ -1,0 +1,212 @@
+/* ---------- GLOBAL ---------- */
+body{
+    margin:0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(160deg, #050505, #14002a);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ---------- HEADER ---------- */
+header{
+    text-align:center;
+    /* reduce bottom padding so navbar sits closer */
+    padding:30px 10px 8px;
+    font-size:2.5rem;
+    font-weight:bold;
+}
+
+/* alternating python colors */
+header span:nth-child(odd){
+    color:#ffd43b;
+}
+header span:nth-child(even){
+    color:#4b8bbe;
+}
+
+/* ---------- TREE CONTAINER ---------- */
+.tree{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:50px;
+    padding-bottom:80px;
+}
+
+/* ---------- ROW ---------- */
+.row{
+    display:flex;
+    gap:60px;
+}
+
+/* ---------- LESSON NODE ---------- */
+.lesson{
+    width:120px;
+    height:120px;
+    border-radius:25px;
+    background: linear-gradient(145deg,#2a0060,#46008f);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(160,80,255,0.35);
+    transition:all .25s ease;
+    position:relative;
+}
+
+.lesson:hover{
+    transform:translateY(-8px) scale(1.05);
+    box-shadow:0 0 35px rgba(180,120,255,0.7);
+}
+
+/* ---------- CONNECTOR ---------- */
+.connector{
+    width:6px;
+    height:50px;
+    background:linear-gradient(#7b39ff,#c77dff);
+    border-radius:3px;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+    text-align:center;
+    padding:20px;
+    opacity:.6;
+}
+
+/* ---------- LESSON MODAL ---------- */
+#lesson-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+    visibility:hidden;
+    opacity:0;
+    transition:opacity .3s ease;
+}
+
+#lesson-modal.show{
+    visibility:visible;
+    opacity:1;
+}
+
+.lesson-card{
+    background: linear-gradient(145deg,#2a0060,#46008f);
+    color:white;
+    width:90%;
+    max-width:600px;
+    height:70%;
+    max-height:500px;
+    border-radius:20px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow:0 0 30px rgba(160,80,255,0.5);
+    position:relative;
+}
+
+#lesson-title{
+    font-size:1.75rem;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+#lesson-page-text{
+    flex:1;
+    font-size:1.2rem;
+    overflow-y:auto;
+    padding:10px;
+    transition:opacity .2s ease;
+}
+
+.lesson-nav{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+}
+
+.nav-btn{
+    background:none;
+    border:none;
+    color:white;
+    font-size:2rem;
+    cursor:pointer;
+    transition:opacity .2s ease;
+}
+
+.nav-btn.disabled{
+    opacity:.3;
+    pointer-events:none;
+}
+
+#close-btn{
+    position:absolute;
+    top:20px;
+    right:30px;
+    background:none;
+    border:none;
+    color:white;
+    font-size:1.5rem;
+    cursor:pointer;
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:700px){
+    .row{
+        gap:20px;
+    }
+    .lesson{
+        width:90px;
+        height:90px;
+        font-size:.85rem;
+    }
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    background:#2a0060;
+    padding:14px 0; /* make bar a bit taller */
+    margin-bottom:50px; /* space between bar and lesson squares */
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+
+.nav-link{
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    position:relative;
+    transition:color .2s ease, text-shadow .2s ease;
+}
+
+.nav-link:hover{
+    /* glow using Python colors; final color doesn't change so links remain white */
+    text-shadow:0 0 8px #ffd43b, 0 0 12px #4b8bbe;
+}
+
+/* alternate hover shadows per link */
+.nav-link:nth-child(odd):hover{
+    text-shadow:0 0 8px #ffd43b;
+}
+.nav-link:nth-child(even):hover{
+    text-shadow:0 0 8px #4b8bbe;
+}
+
+/* mobile adjustments */
+@media(max-width:700px){
+    .navbar{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+}
